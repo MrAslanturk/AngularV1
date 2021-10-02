@@ -1,0 +1,7 @@
+{
+  "name": "ruyaApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

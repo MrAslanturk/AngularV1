@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+   
+   <!--
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    -->
+    <ion-title>{{userEmail ? 'HomePage':'Login'}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/signup">Kayıt Ol</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  
+
+  <div *ngIf="!userEmail">
+
+
+  <ion-item>
+    <ion-label position="floating">e-mail</ion-label>
+    <ion-input  [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label position="floating" >Password</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+
+<div>
+  <ion-button expand="block" (click)="login()" [disabled]="!password || !email"  *ngIf="!user" routerLink="/folder/Inbox">Login</ion-button>
+  </div>
+
+</div>
+
+
+  <div *ngIf="userEmail">{{userEmail}}
+
+    <ion-button expand="block" (click)="logOut()">Çıkış</ion-button>
+
+  </div>
+
+</ion-content>
